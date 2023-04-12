@@ -12,6 +12,7 @@ A flutter package that focuses on the busy state.
 * BusyScaffold : scaffold with auto managed busy state
 * BusyCupertinoScaffold : cupertino scaffold with auto managed busy state
 * BusyWidget : widget with auto managed busy state
+* No external packages used, use busy serenely
 
 ## Usage
 
