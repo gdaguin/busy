@@ -1,16 +1,14 @@
 # busy
 
-A new Flutter project.
+A flutter package that focuses on the busy state.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+![Screenshot](https://raw.githubusercontent.com/gdaguin/busy/main/doc/images/busy.gif)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features
+* Adds an isBusy attribute to a State object.
+* Adds a startBusyContext method that automatically manages the state of the isBusy property.
+* BusyScaffold : scaffold with auto managed busy state
+* BusyCupertinoScaffold : cupertino scaffold with auto managed busy state
+* BusyWidget : widget with auto managed busy state
