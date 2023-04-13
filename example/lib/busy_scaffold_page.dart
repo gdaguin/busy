@@ -1,4 +1,4 @@
-import 'package:busy/export.dart';
+import 'package:busy/busy.dart';
 import 'package:flutter/material.dart';
 
 class BusyScaffoldPage extends StatefulWidget {

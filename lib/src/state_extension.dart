@@ -10,6 +10,7 @@ extension BusyStatefulWidget<T extends StatefulWidget> on State<T> {
     if (mounted == false) {
       return;
     }
+    // ignore: INVALID_USE_OF_PROTECTED_MEMBER
     setState(() {
       _isBusyExpando[this] = isBusy;
     });
