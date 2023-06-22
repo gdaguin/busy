@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'base_busy_stateless_widget.dart';
 
 class BusyCupertinoScaffold extends BaseBusyStatelessWidget {
-  const BusyCupertinoScaffold(
-      {super.key, required isBusy, required this.scaffold})
+  const BusyCupertinoScaffold({super.key, required isBusy, required this.scaffold})
       : super(isBusy: isBusy, child: scaffold);
 
   final CupertinoPageScaffold scaffold;
@@ -24,10 +22,10 @@ class BusyCupertinoScaffold extends BaseBusyStatelessWidget {
                 SafeArea(
                     child: Visibility(
                         visible: isBusy,
-                        child: Column(
+                        child: Stack(
                           children: [
                             SizedBox(height: appBarSize.height),
-                            const LinearProgressIndicator(),
+                            const Center(child: CupertinoActivityIndicator())
                           ],
                         )))
               ],

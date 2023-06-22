@@ -1,6 +1,6 @@
 name: busy
-description: A flutter package that focuses on the busy state.
-version: 1.0.0
+description: A flutter package that focuses on the busy state. Centralize the management of the loading widget, thanks to this very easy-to-use package, which uses no external package dependencies.
+version: 1.0.1
 homepage: https://github.com/gdaguin/busy
 
 environment:
@@ -14,6 +14,7 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+  lints: ^2.1.1
 
 flutter:
   uses-material-design: true
