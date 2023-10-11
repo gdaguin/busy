@@ -29,7 +29,7 @@ class _BusyScaffoldPageState extends State<BusyScaffoldPage> {
                             await Future.delayed(const Duration(seconds: 2));
                           });
                         },
-                        child: Text("Start async method")),
+                        child: const Text("Start async method")),
                   ],
                 ),
               ),

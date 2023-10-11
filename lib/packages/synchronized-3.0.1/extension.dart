@@ -1,6 +1,7 @@
 import 'dart:async';
 
-import 'package:busy/packages/synchronized-3.0.1/src/extension_impl.dart' as impl;
+import 'package:busy/packages/synchronized-3.0.1/src/extension_impl.dart'
+    as impl;
 
 /// Add lock ability to any object.
 ///
@@ -42,7 +43,8 @@ extension SynchronizedLock on Object {
   /// Executes [computation] when lock is available.
   ///
   /// Only one asynchronous block can run while the lock is retained.
-  Future<T> synchronized<T>(FutureOr<T> Function() computation, {Duration? timeout}) {
+  Future<T> synchronized<T>(FutureOr<T> Function() computation,
+      {Duration? timeout}) {
     return impl.objectSynchronized<T>(this, computation, timeout: timeout);
   }
 }

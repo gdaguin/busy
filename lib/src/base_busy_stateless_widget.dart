@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 abstract class BaseBusyStatelessWidget extends StatelessWidget {
-  const BaseBusyStatelessWidget({super.key, required this.isBusy, required this.child});
+  const BaseBusyStatelessWidget(
+      {super.key, required this.isBusy, required this.child});
 
   final bool isBusy;
   final Widget child;
@@ -16,6 +17,7 @@ abstract class BaseBusyStatelessWidget extends StatelessWidget {
   }
 
   Widget getBusyContainer(BuildContext context) {
-    return Container(color: Theme.of(context).colorScheme.surface.withOpacity(0.5));
+    return Container(
+        color: Theme.of(context).colorScheme.surface.withOpacity(0.5));
   }
 }

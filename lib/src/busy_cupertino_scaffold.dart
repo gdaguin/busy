@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'base_busy_stateless_widget.dart';
 
 class BusyCupertinoScaffold extends BaseBusyStatelessWidget {
-  const BusyCupertinoScaffold({super.key, required isBusy, required this.scaffold})
+  const BusyCupertinoScaffold(
+      {super.key, required isBusy, required this.scaffold})
       : super(isBusy: isBusy, child: scaffold);
 
   final CupertinoPageScaffold scaffold;

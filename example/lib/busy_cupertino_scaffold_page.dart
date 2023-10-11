@@ -6,7 +6,8 @@ class BusyCupertinoScaffoldPage extends StatefulWidget {
   const BusyCupertinoScaffoldPage({super.key});
 
   @override
-  State<BusyCupertinoScaffoldPage> createState() => _BusyCupertinoScaffoldPageState();
+  State<BusyCupertinoScaffoldPage> createState() =>
+      _BusyCupertinoScaffoldPageState();
 }
 
 class _BusyCupertinoScaffoldPageState extends State<BusyCupertinoScaffoldPage> {

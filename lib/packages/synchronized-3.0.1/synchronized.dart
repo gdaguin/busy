@@ -52,7 +52,8 @@ abstract class Lock {
   /// If [timeout] is specified, it will try to grab the lock and will not
   /// call the computation callback and throw a [TimeoutExpection] is the lock
   /// cannot be grabbed in the given duration.
-  Future<T> synchronized<T>(FutureOr<T> Function() computation, {Duration? timeout});
+  Future<T> synchronized<T>(FutureOr<T> Function() computation,
+      {Duration? timeout});
 
   /// returns true if the lock is currently locked.
   bool get locked;

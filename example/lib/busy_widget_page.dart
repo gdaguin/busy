@@ -23,11 +23,15 @@ class _BusyWidgetPageState extends State<BusyWidgetPage> {
                 isBusy: isBusy,
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.33,
-                  child: Container(color: Colors.blue, child: const Center(child: Text("Busy widget"))),
+                  child: Container(
+                      color: Colors.blue,
+                      child: const Center(child: Text("Busy widget"))),
                 )),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.33,
-              child: Container(color: Colors.red, child: const Center(child: Text("Non busy widget"))),
+              child: Container(
+                  color: Colors.red,
+                  child: const Center(child: Text("Non busy widget"))),
             ),
             FilledButton(
                 onPressed: () {

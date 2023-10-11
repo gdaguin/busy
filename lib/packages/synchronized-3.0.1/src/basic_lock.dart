@@ -10,7 +10,8 @@ class BasicLock implements Lock {
   bool get locked => last != null;
 
   @override
-  Future<T> synchronized<T>(FutureOr<T> Function() func, {Duration? timeout}) async {
+  Future<T> synchronized<T>(FutureOr<T> Function() func,
+      {Duration? timeout}) async {
     final prev = last;
     final completer = Completer<void>.sync();
     last = completer.future;
