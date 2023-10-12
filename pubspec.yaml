@@ -1,6 +1,6 @@
 name: busy
 description: Centralize loading widget management, thanks to this very easy-to-use package, which uses no external package dependencies.
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/gdaguin/busy
 
 environment:
