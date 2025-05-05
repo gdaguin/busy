@@ -1,3 +1,6 @@
+# 1.0.4
+- Code improvement
+
 # 1.0.3
 - Be aware of a busy context update directly from a StatefulWidget
 

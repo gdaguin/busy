@@ -7,8 +7,8 @@ class BusyWidget extends BaseBusyStatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-        onWillPop: onWillPop(isBusy),
+    return PopScope(
+        canPop: canPop(isBusy),
         child: IgnorePointer(
             ignoring: isBusy, // all taps will have no effects
             child: Stack(

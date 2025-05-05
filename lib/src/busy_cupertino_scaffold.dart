@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+
 import 'base_busy_stateless_widget.dart';
 
 class BusyCupertinoScaffold extends BaseBusyStatelessWidget {
@@ -12,8 +13,8 @@ class BusyCupertinoScaffold extends BaseBusyStatelessWidget {
   Widget build(BuildContext context) {
     var appBarSize = scaffold.navigationBar?.preferredSize ?? const Size(0, 0);
 
-    return WillPopScope(
-        onWillPop: onWillPop(isBusy),
+    return PopScope(
+        canPop: canPop(isBusy),
         child: IgnorePointer(
             ignoring: isBusy,
             child: Stack(

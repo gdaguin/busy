@@ -11,8 +11,8 @@ class BusyScaffold extends BaseBusyStatelessWidget {
   Widget build(BuildContext context) {
     var appBarSize = scaffold.appBar?.preferredSize ?? const Size(0, 0);
 
-    return WillPopScope(
-        onWillPop: onWillPop(isBusy),
+    return PopScope(
+        canPop: canPop(isBusy),
         child: IgnorePointer(
             ignoring: isBusy,
             child: Stack(
