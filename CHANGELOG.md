@@ -1,3 +1,6 @@
+# 1.1.0
+- Allow async operations to timeout with optional callback using TimeoutConfig
+
 # 1.0.4
 - Code improvement
 
