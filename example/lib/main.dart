@@ -40,66 +40,82 @@ class _MyHomePageState extends State<MyHomePage> {
     return BusyScaffold(
       isBusy: isBusy,
       scaffold: Scaffold(
-          appBar: AppBar(
-            title: Text(widget.title),
-          ),
-          body: SafeArea(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  const SizedBox(height: 8),
-                  FilledButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const BusyScaffoldPage()),
-                        );
-                      },
-                      child: const Text("Go to busy sfaffold")),
-                  FilledButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  const BusyCupertinoScaffoldPage()),
-                        );
-                      },
-                      child: const Text("Go to busy cupertino sfaffold")),
-                  FilledButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const BusyWidgetPage()),
-                        );
-                      },
-                      child: const Text("Go to busy widget")),
-                  ExampleStatelessWidget(
-                    functionToCall: () async {
-                      await Future.delayed(const Duration(seconds: 1));
-                    },
-                    isBusyValueChanged: (isBusyNewValue) {
-                      setState(() {
-                        isBusy = isBusyNewValue;
-                      });
-                    },
-                  ),
-                ],
-              ),
+        appBar: AppBar(title: Text(widget.title)),
+        body: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                const SizedBox(height: 8),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BusyScaffoldPage(),
+                      ),
+                    );
+                  },
+                  child: const Text("Go to busy scaffold"),
+                ),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BusyCupertinoScaffoldPage(),
+                      ),
+                    );
+                  },
+                  child: const Text("Go to busy cupertino scaffold"),
+                ),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BusyWidgetPage(),
+                      ),
+                    );
+                  },
+                  child: const Text("Go to busy widget"),
+                ),
+                ExampleStatelessWidget(
+                  functionToCall: () async {
+                    await Future.delayed(const Duration(seconds: 1));
+                  },
+                  isBusyValueChanged: (isBusyNewValue) {
+                    setState(() {
+                      isBusy = isBusyNewValue;
+                    });
+                  },
+                ),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BusyScaffoldPage(),
+                      ),
+                    );
+                  },
+                  child: const Text("Go to busy timeout scaffold"),
+                ),
+              ],
             ),
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
 
 class ExampleStatelessWidget extends StatelessWidget {
-  const ExampleStatelessWidget(
-      {super.key,
-      required this.functionToCall,
-      required this.isBusyValueChanged});
+  const ExampleStatelessWidget({
+    super.key,
+    required this.functionToCall,
+    required this.isBusyValueChanged,
+  });
 
   final Function functionToCall;
   final Function(bool) isBusyValueChanged;
@@ -109,8 +125,9 @@ class ExampleStatelessWidget extends StatelessWidget {
     return FilledButton(
       onPressed: () async {
         startBusyContext(
-            functionToCall: functionToCall,
-            isBusyValueChanged: isBusyValueChanged);
+          functionToCall: functionToCall,
+          isBusyValueChanged: isBusyValueChanged,
+        );
       },
       child: const Text("Load from stateless widget"),
     );

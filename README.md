@@ -133,3 +133,19 @@ class _BusyWidgetPageState extends State<BusyWidgetPage> {
   }
 }
 ```
+
+### ⌛ - Timeout Support
+
+You can provide a `TimeoutConfig` to automatically timeout long-running operations and optionally define a callback when the timeout is reached.
+
+```
+await startBusyContext(() async {
+  // Simulate a long async operation
+  await Future.delayed(Duration(seconds: 5));
+}, timeout: TimeoutConfig(
+  Duration(seconds: 3),
+  onTimeout: () {
+    debugPrint("The operation took too long and was cancelled.");
+  },
+));
+```

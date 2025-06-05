@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:busy/busy.dart';
 import 'package:busy/packages/synchronized-3.0.1/extension.dart';
 import 'package:busy/packages/synchronized-3.0.1/synchronized.dart';
 import 'package:flutter/material.dart';
@@ -25,10 +28,19 @@ extension BusyStatefulWidget<T extends StatefulWidget> on State<T> {
   Future startBusyContext(
     Function functionToCall, {
     Function(bool)? isBusyValueChanged,
+    TimeoutConfig? timeout,
   }) async {
     try {
       _updateBusyState(1, isBusyValueChanged: isBusyValueChanged);
-      await functionToCall();
+
+      if (timeout != null) {
+        await functionToCall().timeout(timeout.duration);
+      } else {
+        await functionToCall();
+      }
+    } on TimeoutException catch (e) {
+      debugPrint('startBusyContext timed out: $e');
+      timeout?.onTimeout?.call();
     } finally {
       _updateBusyState(-1, isBusyValueChanged: isBusyValueChanged);
     }
