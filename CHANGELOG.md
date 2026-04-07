@@ -1,3 +1,6 @@
+# 1.2.1
+- Code improvement
+
 # 1.2.0
 - Add a progress property
 
