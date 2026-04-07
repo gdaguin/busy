@@ -2,8 +2,8 @@ import 'package:busy/src/base_busy_stateless_widget.dart';
 import 'package:flutter/material.dart';
 
 class BusyScaffold extends BaseBusyStatelessWidget {
-  const BusyScaffold({super.key, required isBusy, required this.scaffold})
-      : super(isBusy: isBusy, child: scaffold);
+  const BusyScaffold({super.key, required isBusy, required this.scaffold, double? progress})
+      : super(isBusy: isBusy, child: scaffold, progress: progress);
 
   final Scaffold scaffold;
 
@@ -25,7 +25,7 @@ class BusyScaffold extends BaseBusyStatelessWidget {
                         child: Column(
                           children: [
                             SizedBox(height: appBarSize.height),
-                            const LinearProgressIndicator(),
+                            LinearProgressIndicator(value: progress),
                           ],
                         )))
               ],

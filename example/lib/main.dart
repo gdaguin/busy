@@ -3,6 +3,7 @@ import 'package:example/busy_widget_page.dart';
 import 'package:flutter/material.dart';
 
 import 'busy_cupertino_scaffold_page.dart';
+import 'busy_progress_scaffold_page.dart';
 import 'busy_scaffold_page.dart';
 
 void main() {
@@ -46,7 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                const SizedBox(height: 8),
                 FilledButton(
                   onPressed: () {
                     Navigator.push(
@@ -58,6 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text("Go to busy scaffold"),
                 ),
+                const SizedBox(height: 8),
                 FilledButton(
                   onPressed: () {
                     Navigator.push(
@@ -69,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text("Go to busy cupertino scaffold"),
                 ),
+                const SizedBox(height: 8),
                 FilledButton(
                   onPressed: () {
                     Navigator.push(
@@ -80,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text("Go to busy widget"),
                 ),
+                const SizedBox(height: 8),
                 ExampleStatelessWidget(
                   functionToCall: () async {
                     await Future.delayed(const Duration(seconds: 1));
@@ -90,6 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   },
                 ),
+                const SizedBox(height: 8),
                 FilledButton(
                   onPressed: () {
                     Navigator.push(
@@ -100,6 +104,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                   child: const Text("Go to busy timeout scaffold"),
+                ),
+                const SizedBox(height: 8),
+                FilledButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BusyProgressScaffoldPage(),
+                      ),
+                    );
+                  },
+                  child: const Text("Go to busy progress scaffold"),
                 ),
               ],
             ),

@@ -1,3 +1,6 @@
+# 1.2.0
+- Add a progress property
+
 # 1.1.0
 - Allow async operations to timeout with optional callback using TimeoutConfig
 

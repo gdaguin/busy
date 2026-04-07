@@ -27,6 +27,7 @@ class _BusyScaffoldPageState extends State<BusyScaffoldPage> {
   Widget build(BuildContext context) {
     return BusyScaffold(
         isBusy: isBusy,
+        progress: progress, // 👈 Show progress %, optionnal
         scaffold: Scaffold(
             appBar: AppBar(
               title: const Text("Busy scaffold"),
@@ -64,6 +65,7 @@ class _BusyCupertinoScaffoldPageState extends State<BusyCupertinoScaffoldPage> {
   Widget build(BuildContext context) {
     return BusyCupertinoScaffold(
         isBusy: isBusy,
+        progress: progress, // 👈 Show progress %, optionnal
         scaffold: CupertinoPageScaffold(
             navigationBar: const CupertinoNavigationBar(
               middle: Text("Busy cupertino scaffold"),
@@ -107,6 +109,7 @@ class _BusyWidgetPageState extends State<BusyWidgetPage> {
           children: <Widget>[
             BusyWidget(
                 isBusy: isBusy,
+                progress: progress, // 👈 Show progress %, optionnal
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.33,
                   child: Container(

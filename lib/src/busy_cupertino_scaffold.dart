@@ -4,8 +4,8 @@ import 'base_busy_stateless_widget.dart';
 
 class BusyCupertinoScaffold extends BaseBusyStatelessWidget {
   const BusyCupertinoScaffold(
-      {super.key, required isBusy, required this.scaffold})
-      : super(isBusy: isBusy, child: scaffold);
+      {super.key, required isBusy, required this.scaffold, double? progress})
+      : super(isBusy: isBusy, child: scaffold, progress: progress);
 
   final CupertinoPageScaffold scaffold;
 
@@ -27,7 +27,14 @@ class BusyCupertinoScaffold extends BaseBusyStatelessWidget {
                         child: Stack(
                           children: [
                             SizedBox(height: appBarSize.height),
-                            const Center(child: CupertinoActivityIndicator())
+                            Center(
+                              child: progress != null
+                                  ? CupertinoActivityIndicator
+                                      .partiallyRevealed(
+                                      progress: progress!,
+                                    )
+                                  : const CupertinoActivityIndicator(),
+                            )
                           ],
                         )))
               ],

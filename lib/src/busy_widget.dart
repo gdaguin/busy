@@ -2,8 +2,8 @@ import 'package:busy/src/base_busy_stateless_widget.dart';
 import 'package:flutter/material.dart';
 
 class BusyWidget extends BaseBusyStatelessWidget {
-  const BusyWidget({super.key, required isBusy, required child})
-      : super(isBusy: isBusy, child: child);
+  const BusyWidget({super.key, required isBusy, required child, double? progress})
+      : super(isBusy: isBusy, child: child, progress: progress);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class BusyWidget extends BaseBusyStatelessWidget {
                       alignment: Alignment.center,
                       child: Visibility(
                           visible: isBusy,
-                          child: const CircularProgressIndicator())),
+                          child: CircularProgressIndicator(value: progress))),
                 ),
               ],
             )));
