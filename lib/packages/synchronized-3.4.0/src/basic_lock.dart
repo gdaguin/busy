@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'package:busy/packages/synchronized-3.0.1/synchronized.dart';
+
+import 'package:busy/packages/synchronized-3.4.0/synchronized.dart';
 
 /// Basic (non-reentrant) lock
 class BasicLock implements Lock {
@@ -10,8 +11,13 @@ class BasicLock implements Lock {
   bool get locked => last != null;
 
   @override
-  Future<T> synchronized<T>(FutureOr<T> Function() func,
-      {Duration? timeout}) async {
+  bool get canLock => !locked;
+
+  @override
+  Future<T> synchronized<T>(
+    FutureOr<T> Function() func, {
+    Duration? timeout,
+  }) async {
     final prev = last;
     final completer = Completer<void>.sync();
     last = completer.future;

@@ -1,5 +1,5 @@
-import 'package:busy/packages/synchronized-3.0.1/extension.dart';
-import 'package:busy/packages/synchronized-3.0.1/synchronized.dart';
+import 'package:busy/packages/synchronized-3.4.0/extension.dart';
+import 'package:busy/packages/synchronized-3.4.0/synchronized.dart';
 import 'package:flutter/material.dart';
 
 extension BusyWidgetExtension on Widget {

@@ -19,12 +19,15 @@
 ///  }
 /// ```
 //}
-library synchronized;
+library;
 
 import 'dart:async';
 
-import 'package:busy/packages/synchronized-3.0.1/src/basic_lock.dart';
-import 'package:busy/packages/synchronized-3.0.1/src/reentrant_lock.dart';
+import 'package:busy/packages/synchronized-3.4.0/src/basic_lock.dart';
+import 'package:busy/packages/synchronized-3.4.0/src/reentrant_lock.dart';
+
+export 'src/lock_extension.dart' show TekartikLockExtension;
+export 'src/multi_lock.dart' show MultiLock;
 
 /// Object providing the implicit lock.
 ///
@@ -38,7 +41,7 @@ abstract class Lock {
   ///
   /// if [reentrant], it uses [Zone] to allow inner [synchronized] calls.
   factory Lock({bool reentrant = false}) {
-    if (reentrant == true) {
+    if (reentrant) {
       return ReentrantLock();
     } else {
       return BasicLock();
@@ -50,15 +53,26 @@ abstract class Lock {
   /// Only one asynchronous block can run while the lock is retained.
   ///
   /// If [timeout] is specified, it will try to grab the lock and will not
-  /// call the computation callback and throw a [TimeoutExpection] is the lock
+  /// call the computation callback and throw a [TimeoutExpection] if the lock
   /// cannot be grabbed in the given duration.
-  Future<T> synchronized<T>(FutureOr<T> Function() computation,
-      {Duration? timeout});
+  Future<T> synchronized<T>(
+    FutureOr<T> Function() computation, {
+    Duration? timeout,
+  });
 
   /// returns true if the lock is currently locked.
   bool get locked;
 
   /// for reentrant, test whether we are currently in the synchronized section.
   /// for non reentrant, it returns the [locked] status.
+  ///
+  /// For non-reentrant lock, it matches the [locked] status and since it does
+  /// not mean anything, it should not be used as behavior may change in the future.
   bool get inLock;
+
+  /// It returns true if the lock can be locked. For basic lock (reentrant or
+  /// not), it is when the lock is not locked.
+  ///
+  /// For multi lock, it is when any lock is locked.
+  bool get canLock;
 }

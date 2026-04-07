@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:flutter/foundation.dart';
 
 export 'dart:async';
 
@@ -11,5 +10,6 @@ Future<void> sleep(int ms) => Future<void>.delayed(Duration(milliseconds: ms));
 /// Deprecated on purpose to avoid leaving it in the code.
 @Deprecated('Dev only')
 void devPrint(Object object) {
-  debugPrint(object.toString());
+  // ignore: avoid_print
+  print(object);
 }
