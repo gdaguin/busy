@@ -1,9 +1,8 @@
 import 'package:busy/src/base_busy_stateless_widget.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class BusyWidget extends BaseBusyStatelessWidget {
-  const BusyWidget({super.key, required isBusy, required child, double? progress})
-      : super(isBusy: isBusy, child: child, progress: progress);
+  const BusyWidget({super.key, required super.isBusy, required super.child, super.progress});
 
   @override
   Widget build(BuildContext context) {

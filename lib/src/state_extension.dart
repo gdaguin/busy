@@ -1,9 +1,8 @@
 import 'dart:async';
-
 import 'package:busy/busy.dart';
-import 'package:busy/packages/synchronized-3.4.0/extension.dart';
-import 'package:busy/packages/synchronized-3.4.0/synchronized.dart';
-import 'package:flutter/material.dart';
+import 'package:busy/packages/synchronized-3.4.1+2/extension.dart';
+import 'package:busy/packages/synchronized-3.4.1+2/synchronized.dart';
+import 'package:flutter/widgets.dart';
 
 extension BusyStatefulWidget<T extends StatefulWidget> on State<T> {
   static final _isBusyExpando = Expando<bool>();

@@ -1,5 +1,5 @@
 import 'package:busy/busy.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class BusyWidgetPage extends StatefulWidget {
   const BusyWidgetPage({super.key});

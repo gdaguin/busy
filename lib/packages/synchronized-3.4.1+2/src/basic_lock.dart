@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:busy/packages/synchronized-3.4.0/synchronized.dart';
+import 'package:busy/packages/synchronized-3.4.1+2/synchronized.dart';
 
 /// Basic (non-reentrant) lock
 class BasicLock implements Lock {

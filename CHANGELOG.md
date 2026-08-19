@@ -1,3 +1,6 @@
+# 2.0.0
+- Migrated to Flutter 3.47 and updated the project to use `material_ui` and `cupertino_ui`.
+
 # 1.2.1
 - Code improvement
 
