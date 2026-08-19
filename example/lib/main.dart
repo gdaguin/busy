@@ -1,6 +1,6 @@
 import 'package:busy/busy.dart';
 import 'package:example/busy_widget_page.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import 'busy_cupertino_scaffold_page.dart';
 import 'busy_progress_scaffold_page.dart';

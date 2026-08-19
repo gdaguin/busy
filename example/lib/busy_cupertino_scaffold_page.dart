@@ -1,6 +1,5 @@
 import 'package:busy/busy.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 
 class BusyCupertinoScaffoldPage extends StatefulWidget {
   const BusyCupertinoScaffoldPage({super.key});
@@ -25,7 +24,7 @@ class _BusyCupertinoScaffoldPageState extends State<BusyCupertinoScaffoldPage> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     const SizedBox(height: 8),
-                    FilledButton(
+                    CupertinoButton(
                         onPressed: () {
                           startBusyContext(() async {
                             await Future.delayed(const Duration(seconds: 2));

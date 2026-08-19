@@ -2,7 +2,7 @@
 // empty when nothing running
 import 'dart:async';
 
-import 'package:busy/packages/synchronized-3.4.0/src/basic_lock.dart';
+import 'package:busy/packages/synchronized-3.4.1+2/src/basic_lock.dart';
 
 /// All basic lock
 final cacheLocks = <Object, BasicLock>{};

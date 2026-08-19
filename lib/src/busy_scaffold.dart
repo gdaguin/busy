@@ -1,9 +1,9 @@
 import 'package:busy/src/base_busy_stateless_widget.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class BusyScaffold extends BaseBusyStatelessWidget {
-  const BusyScaffold({super.key, required isBusy, required this.scaffold, double? progress})
-      : super(isBusy: isBusy, child: scaffold, progress: progress);
+  const BusyScaffold({super.key, required super.isBusy, required this.scaffold, super.progress})
+      : super(child: scaffold);
 
   final Scaffold scaffold;
 

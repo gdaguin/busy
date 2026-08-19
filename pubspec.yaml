@@ -1,14 +1,16 @@
 name: busy
 description: Centralize loading widget management, thanks to this very easy-to-use package, which uses no external package dependencies.
-version: 1.2.1
+version: 2.0.0
 homepage: https://github.com/gdaguin/busy
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: '>=3.13.0 <4.0.0'
 dependencies:
   flutter:
     sdk: flutter
 
+  cupertino_ui: any
+  material_ui: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
